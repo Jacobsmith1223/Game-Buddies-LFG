@@ -1,0 +1,17 @@
+.dash-head{
+    height:10vh;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+
+}
+
+.dash-title{
+    font-family: 'Press Start 2P', cursive;
+}
+
+.paddle{
+    height:11vh;
+    width:8vw;
+}

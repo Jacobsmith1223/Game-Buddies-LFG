@@ -1,3 +1,3 @@
-SELECT id, username, profile_pic
+SELECT id, username, password, profile_pic
 FROM users
 WHERE username = $1

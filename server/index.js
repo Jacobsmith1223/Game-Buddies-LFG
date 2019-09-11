@@ -21,8 +21,8 @@ const app = express()
 
 // TLM
 app.use(express.json())
-app.unsubscribe(cors())
-app.unsubscribe(session({
+app.use(cors())
+app.use(session({
     resave:false,
     saveUninitialized:true,
     secret: SESSION_SECRET,
@@ -41,9 +41,9 @@ massive(CONNECTION_STRING).then(dbInstance => {
 // Auth Endpoints
 app.post('/auth/register', authCTRL.register)
 
-app.post('/auth/login', authCTRL)
+app.post('/auth/login', authCTRL.login)
 
-app.delete('/auth/logout', authCTRL)
+app.delete('/auth/logout')
 
 
 // Server is listening 

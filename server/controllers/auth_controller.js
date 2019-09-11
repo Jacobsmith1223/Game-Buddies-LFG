@@ -6,13 +6,13 @@ const register = async (req,res) => {
     const db = req.app.get('db')
     const foundUser = await db.find_user([username])
     if(foundUser[0]){
-        return res.status(409).send('Username is already Taken')
+        return res.status(403).send('Username is already Taken')
     }
     const passwordSalt = bcrypt.genSaltSync(15)
     const passwordHash = bcrypt.hashSync(password,passwordSalt)
 
     const newUser = await db.register_user([username,passwordHash,profile_pic])
-
+    
     delete newUser[0].password
 
     req.session.user = newUser[0]
@@ -27,6 +27,7 @@ const login = async (req,res) => {
     if(!foundUser[0]){
         return res.status(403).send('invalid credentials please try again')
     }
+
     const authPassword = bcrypt.compareSync(password, foundUser[0].password)
 
     if(authPassword){
