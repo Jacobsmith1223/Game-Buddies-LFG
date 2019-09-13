@@ -1,6 +1,6 @@
 CREATE TABLE posts(
 id SERIAL PRIMARY KEY,
-user_id INTEGER REFERENCES users(id),
+thread_id INTEGER REFERENCES threads(id),
 title TEXT,
 content TEXT,
 image TEXT 

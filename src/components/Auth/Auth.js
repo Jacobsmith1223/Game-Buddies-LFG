@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import './Auth.css'
 
+import {connect} from 'react-redux'
+import {addUser} from '../../redux/reducer'
+
  class Auth extends Component {
      constructor(){
          super()
@@ -37,6 +40,8 @@ import './Auth.css'
          const {username,password} = this.state;
          axios.post('/auth/login',{username,password})
          .then(res => {
+             const {id,username,profile_pic} = res.data
+             this.props.addUser(id,username,profile_pic)
              if(this.state.error !== true)
              this.props.history.push('/dashboard')
          })
@@ -58,6 +63,8 @@ import './Auth.css'
 
          axios.post('/auth/register', {username, password, profile_pic})
          .then(res => {
+            const {id,username,profile_pic} = res.data
+            this.props.addUser(id,username,profile_pic)
              if(this.state.error !== true)
              this.props.history.push('/dashboard')
          })
@@ -137,13 +144,6 @@ import './Auth.css'
                                 value={this.state.password}
                                 onChange={this.handleChange} />
 
-                         <input className="auth-input"  
-                                 type="text" 
-                                placeholder="profile pic here" 
-                                 name="profile_pic" 
-                                 value={this.state.profile_pic}
-                                 onChange={this.handleChange}  />
-
                      <div className="jeff">
                          <button onClick={this.register} className="btn" >Sign Up</button>
                         <button onClick={this.changeDisplay} className="btn">Cancel</button>
@@ -155,4 +155,4 @@ import './Auth.css'
     }
 }
 
-export default Auth 
+export default connect(null,{addUser})(Auth)

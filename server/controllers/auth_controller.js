@@ -12,7 +12,7 @@ const register = async (req,res) => {
     const passwordHash = bcrypt.hashSync(password,passwordSalt)
 
     const newUser = await db.register_user([username,passwordHash,profile_pic])
-    
+
     delete newUser[0].password
 
     req.session.user = newUser[0]
@@ -37,8 +37,13 @@ const login = async (req,res) => {
     }
     else{res.status(403).send('invalid password')}
 }
+const logout = async (req,res) => {
+    req.session.destroy()
+}
 
 module.exports = {
     register,
     login,
+    logout,
+
 }

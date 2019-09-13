@@ -1,0 +1,82 @@
+
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+.nav-bar{
+    height:100vh;
+    width: 8vw;
+    background:#6a5880;
+    position:fixed;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    box-shadow: 10px 0px 13px 0px rgba(0,0,0,0.75);
+}
+
+.profile-pic{
+    height:13%;
+    width:75%;
+    border-radius:50%;
+    background:white;
+    margin: 10px auto;
+}
+
+.pic{
+    height:100%;
+    width:100%;
+    border-radius:50%;
+    margin: 0px auto;
+}
+
+.bottom-section{
+    margin: 40px auto
+}
+
+.user{
+    margin: 0 auto;
+    margin-bottom:100px;
+    font-family: 'Press Start 2P', cursive;
+    font-size:10px;
+    color:white;
+}
+.middle-block{
+    display:flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items:center;
+
+}
+.new{
+    margin-bottom: 15px;
+    font-family: 'Press Start 2P', cursive;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    color:white;
+}
+.home{
+    margin-bottom:15px;
+    font-family: 'Press Start 2P', cursive;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    color:white;
+}
+.setting{
+    margin-bottom: 200px;
+    font-family: 'Press Start 2P', cursive;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    color:white;
+}
+
+.block{
+    width: 100%;
+    height: 100%;
+    background:white;
+    color:#6a5880;
+    border-radius: 5px;
+    border:none;
+    outline:none;
+    font-family: 'Press Start 2P', cursive;
+}

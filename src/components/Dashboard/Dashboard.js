@@ -1,14 +1,49 @@
 import React, { Component } from 'react'
 import './Dashboard.css'
+import axios from 'axios'
+import {Link} from 'react-router-dom'
 
-export default class Dashboard extends Component {
+ 
+ class Dashboard extends Component {
+     constructor(){
+         super()
+
+         this.state={
+             threads:[],
+             search:''
+         }
+     }
+     componentDidMount(){
+        axios.get(`/api/thread`)
+        .then((res) => {
+            this.setState({
+                threads:res.data
+            })
+        })
+    }
+
     render() {
+        const mappedThreads = this.state.threads.map((e, i) => {
+            return (<Link to={`/threads/${e.id}`}>
+                <div className='thread-box'>
+                <p className="game-title">{e.game}</p>
+                <img src={e.image} alt='thread-pic' className="thread-pic" />
+                
+                
+            </div>
+                     </Link>)
+        })
         return (
             <div>
-                <header className="dash-head">
+                <div className="dash-head">
                         <h1 className="dash-title">Game Buddies</h1>
-                </header>
+                </div>
+                {mappedThreads}
             </div>
         )
     }
 }
+
+
+
+export default Dashboard

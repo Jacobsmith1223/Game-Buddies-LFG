@@ -7,6 +7,8 @@ chalk = require('chalk')
 
 // controller functions
 const authCTRL = require('./controllers/auth_controller')
+const threadCTRL = require('./controllers/thread_controller')
+const postCTRL = require('./controllers/post_controller')
 
 // ENV Variables 
 const {
@@ -43,7 +45,15 @@ app.post('/auth/register', authCTRL.register)
 
 app.post('/auth/login', authCTRL.login)
 
-app.delete('/auth/logout')
+app.post('/auth/logout', authCTRL.logout)
+
+// Thread Endpoints
+app.get('/api/thread', threadCTRL.getThread)
+
+app.post('/api/thread/new', threadCTRL.newThreads)
+
+// Post Endpoints
+app.get('/api/post', postCTRL.getPost)
 
 
 // Server is listening 
