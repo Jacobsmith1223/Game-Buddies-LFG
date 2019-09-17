@@ -69,6 +69,14 @@
     cursor:pointer;
     color:white;
 }
+.new-post{
+    margin-bottom:25px;
+    font-family: 'Press Start 2P', cursive;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    color:white;
+}
 
 .block{
     width: 100%;

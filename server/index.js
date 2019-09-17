@@ -53,7 +53,11 @@ app.get('/api/thread', threadCTRL.getThread)
 app.post('/api/thread/new', threadCTRL.newThreads)
 
 // Post Endpoints
-app.get('/api/post', postCTRL.getPost)
+app.get('/api/posts/:id', postCTRL.getPost)
+
+app.post('/api/post/new/:id', postCTRL.newPost)
+
+app.delete('/api/delete/post/:id', postCTRL.deletePost)
 
 
 // Server is listening 

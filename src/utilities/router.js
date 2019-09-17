@@ -10,14 +10,16 @@ import Settings from '../components/Settings/Settings'
 import Post from '../components/Post/Post'
 
 
+
 export default (
 
     <Switch>
         <Route exact path = '/' component = {Auth} />
         <Route path = '/dashboard' component = {Dashboard} />
-        <Route path ="/threads/:threads.id" component = {Thread} />
+        <Route path ="/threads/:threadsid" component = {Thread} />
         <Route path = '/new/thread' component = {Form} />
         <Route path = '/settings' component = {Settings} />
-        <Route path = '/posts/:posts.id' component = {Post} />
+        <Route path = '/posts/:postsid' component = {Post} />
+       
     </Switch>
 )

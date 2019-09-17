@@ -1,0 +1,23 @@
+.new-post{
+    margin:0 auto;
+    
+}
+
+.posts{
+    margin-left:10vw;
+}
+
+.post-box{
+    display:flex;
+    flex-direction: row;
+    height:18vh;
+    width:65vw;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    border: 1px transparent;
+    background:#6a5880;
+    border-radius:10px;
+    margin-bottom:40px;
+    box-shadow: 10px 10px 13px -4px rgba(0,0,0,0.75);
+}
