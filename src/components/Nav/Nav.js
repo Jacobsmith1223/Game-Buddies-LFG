@@ -12,6 +12,11 @@ class Nav extends Component {
             console.log('you have logged out')
         })
     }
+    componentDidUpdate(prevProps){
+        if(this.props.profile_pic !== prevProps.profile_pic){
+            this.fetchData(this.props.profile_pic)
+        }
+    }
     render() {
         return (
             <div className="nav-bar">

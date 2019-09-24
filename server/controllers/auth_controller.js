@@ -41,9 +41,20 @@ const logout = async (req,res) => {
     req.session.destroy()
 }
 
+const updateProfile = (req,res) => {
+    const {id} = req.params;
+    const{profile_pic} = req.body;
+    const db = req.app.get('db');
+    console.log(+id)
+    db.update_profile([+id,profile_pic]).then(() => {
+        res.status(200).send('profile updated')
+    })
+}
+
 module.exports = {
     register,
     login,
     logout,
+    updateProfile
 
 }

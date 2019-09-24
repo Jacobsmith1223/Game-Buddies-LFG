@@ -3,6 +3,7 @@ import axios from 'axios'
 import{ Link } from 'react-router-dom'
 import './Thread.css'
 
+
 class Thread extends Component {
     constructor(){
         super()
@@ -16,6 +17,9 @@ class Thread extends Component {
     }
 
     componentDidMount(){
+       this.getPosts()
+    }
+    getPosts =() => {
         axios.get(`/api/posts/${this.props.match.params.threadsid}`)
         .then((res) => {
             this.setState({
@@ -36,18 +40,21 @@ class Thread extends Component {
         })
     }
 
-    deletePost = (data) => {
-        this.setState({
-            posts:data
-          })
+    deletePost = () => {
+       axios.delete(`/api/delete/post/${this.props.match.params.postid}`).then(() => {
+           this.getPosts()
+       })
     }
 
     render() {
-        console.log(this.state)
         const mappedPosts = this.state.posts.map((e, i) => {
-            return (<Link to={`/posts/${e.id}`}>
-                <div className='thread-box'>
-                <p className="game-title">{e.title}</p>
+            return (<Link className='post-link' to={`/posts/${e.id}`}>
+            <div className='thread-box'>
+                 <div className='top-stuff'>
+                    <p className="game-title">{e.title}</p>
+                    
+                     
+                 </div>
                 <p className='content' >{e.content} </p> 
                 
                 
@@ -58,17 +65,17 @@ class Thread extends Component {
         return (
             <div className='posts'>
                 <div className='post-box'>
-                 <div>
-                     <p>Post Title</p>
-                    <input onChange = {e => this.setState({title: e.target.value})} />
+                 <div className='postTitle'>
+                     <p>Post Title:</p>
+                    <input className='post-input' onChange = {e => this.setState({title: e.target.value})} />
                  </div>
-                 <div>
+                 <div className='postContent'>
                     <p>Post Content:</p>
-                    <input onChange = {e => this.setState({content: e.target.value})} />
+                    <input className='post-input' onChange = {e => this.setState({content: e.target.value})} />
                  </div>
-                 <button onClick={this.newPost}>Post</button>
+                 <button className='post-btn' onClick={this.newPost}>Post</button>
                 </div>
-               {mappedPosts}
+              {mappedPosts}
             </div>
         )
     }

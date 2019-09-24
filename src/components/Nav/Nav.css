@@ -46,36 +46,31 @@
 
 }
 .new{
-    margin-bottom: 15px;
+    margin-bottom: 115px;
     font-family: 'Press Start 2P', cursive;
     background:transparent;
     border:none;
     cursor:pointer;
     color:white;
+    font-size:15px;
 }
 .home{
-    margin-bottom:15px;
+    margin-bottom:115px;
     font-family: 'Press Start 2P', cursive;
     background:transparent;
     border:none;
     cursor:pointer;
     color:white;
+    font-size:15px;
 }
 .setting{
-    margin-bottom: 200px;
+    margin-bottom: 50px;
     font-family: 'Press Start 2P', cursive;
     background:transparent;
     border:none;
     cursor:pointer;
     color:white;
-}
-.new-post{
-    margin-bottom:25px;
-    font-family: 'Press Start 2P', cursive;
-    background:transparent;
-    border:none;
-    cursor:pointer;
-    color:white;
+    font-size:13px;
 }
 
 .block{
@@ -87,4 +82,51 @@
     border:none;
     outline:none;
     font-family: 'Press Start 2P', cursive;
+}
+
+@media(max-width:1024px){
+    .profile-pic{
+        height:8%;
+        width:75%;
+        border-radius:50%;
+        background:white;
+        margin: 10px auto;
+    }
+    .nav-bar{
+        height:100vh;
+        width: 13vw;
+        background:#6a5880;
+        position:fixed;
+        display:flex;
+        flex-direction:column;
+        justify-content: space-between;
+        box-shadow: 10px 0px 13px 0px rgba(0,0,0,0.75);
+    }
+    .new{
+        margin-bottom: 115px;
+        font-family: 'Press Start 2P', cursive;
+        background:transparent;
+        border:none;
+        cursor:pointer;
+        color:white;
+        font-size:15px;
+    }
+    .home{
+        margin-bottom:115px;
+        font-family: 'Press Start 2P', cursive;
+        background:transparent;
+        border:none;
+        cursor:pointer;
+        color:white;
+        font-size:15px;
+    }
+    .setting{
+        margin-bottom: 200px;
+        font-family: 'Press Start 2P', cursive;
+        background:transparent;
+        border:none;
+        cursor:pointer;
+        color:white;
+        font-size:15px;
+    }
 }

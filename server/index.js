@@ -4,6 +4,7 @@ cors = require('cors'),
 massive = require('massive'),
 session = require('express-session'),
 chalk = require('chalk')
+const socket = require('socket.io')
 
 // controller functions
 const authCTRL = require('./controllers/auth_controller')
@@ -19,7 +20,12 @@ const {
 
 
 // App instance
-const app = express()
+const app = express(),
+    io = socket(
+        app.listen(SERVER_PORT,() => {
+            console.log(chalk.cyan('server is serving'))
+        })
+    )
 
 // TLM
 app.use(express.json())
@@ -47,6 +53,8 @@ app.post('/auth/login', authCTRL.login)
 
 app.post('/auth/logout', authCTRL.logout)
 
+app.put('/api/update/:id', authCTRL.updateProfile)
+  
 // Thread Endpoints
 app.get('/api/thread', threadCTRL.getThread)
 
@@ -60,7 +68,34 @@ app.post('/api/post/new/:id', postCTRL.newPost)
 app.delete('/api/delete/post/:id', postCTRL.deletePost)
 
 
-// Server is listening 
-app.listen(SERVER_PORT,() => {
-    console.log(chalk.cyan('server is serving'))
+
+
+
+
+io.on('connection', (socket) => {
+    console.log('made socket connection')
+
+    socket.on('join', async data =>{
+        const {room} = data
+        console.log(room)
+        const db = app.get('db')
+        console.log('join room', room) 
+        let existingRoom = await db.check_room(room)
+        
+        let messages = await db.get_chat_messages(room)
+        socket.join(room)
+        io.to(room).emit('room joined', messages)
+    })
+
+    socket.on('message sent', async data => {
+        const { room, message } = data
+        const db = app.get('db')
+        await db.create_message(room, message)
+        let messages = await db.get_chat_messages(room )
+        io.to(data.room).emit('message dispatched', messages)
+    });
+    socket.on("disconnect", () => {
+        console.log("User Disconnected")
+    });
 })
+

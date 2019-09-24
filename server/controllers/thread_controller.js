@@ -14,6 +14,8 @@ const newThreads = (req,res) => {
 
 
 
+
+
 module.exports ={
     getThread,
     newThreads

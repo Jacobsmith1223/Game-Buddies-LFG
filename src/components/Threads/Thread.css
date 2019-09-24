@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
 .new-post{
     margin:0 auto;
     
@@ -14,10 +16,65 @@
     width:65vw;
     margin: 0 auto;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     border: 1px transparent;
     background:#6a5880;
     border-radius:10px;
     margin-bottom:40px;
     box-shadow: 10px 10px 13px -4px rgba(0,0,0,0.75);
+    font-family: 'Press Start 2P', cursive;
+    
+}
+
+.top-stuff{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.postTitle{
+    display:flex;
+    flex-direction: row;
+    font-size:13px;
+    color:white;
+}
+
+.postContent{
+    display:flex;
+    flex-direction: row;
+    font-size:13px;
+    color:white;
+}
+
+.post-input{
+    width:60%;
+    height:3vh;
+    border: 1px solid;
+    border-radius: 3px;
+    outline: none;
+    padding-left:5px;
+    margin: 2% auto;
+}
+.post-btn{
+    width: 7%;
+    height: 19%;
+    background:white;
+    color:#572f80;
+    border-radius: 5px;
+    border:none;
+    outline:none;
+
+}
+
+.content{
+    background: white;
+    width: 80%;
+    height: 70%;
+    font-size: 18px;
+    border-radius:5px;
+    color:black;
+}
+
+.post-link{
+    text-decoration: none;
 }

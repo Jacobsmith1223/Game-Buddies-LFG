@@ -11,6 +11,7 @@
 
 .dash-title{
     font-family: 'Press Start 2P', cursive;
+    font-size:20px;
 }
 
 .paddle{
@@ -34,9 +35,10 @@
 }
 
 .game-title{
-    padding:5px;
+    padding:8px;
     color: white;
     font-family: 'Press Start 2P', cursive;
+    font-size:20px;
 }
 
 .thread-pic{
@@ -44,5 +46,20 @@
     height:20vh;
     border-radius:10px;
     box-shadow: 10px 10px 13px -4px rgba(0,0,0,0.75);
+
+}
+
+@media(max-width: 1024px){
+    .game-title{
+        
+        color: white;
+        font-family: 'Press Start 2P', cursive;
+        margin: 0 auto;
+        font-size:35px;
+    }
+
+}
+
+@media(max-width: 950px){
 
 }

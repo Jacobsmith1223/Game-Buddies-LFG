@@ -1,0 +1,23 @@
+.delete {
+    margin: 0 auto
+}
+
+
+
+.chatApp{
+    height: 70vh;
+    width:60vw;
+    background:gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.message{
+    height: 60vh;
+    width: 50vw;
+    background:white;
+}
+
+
