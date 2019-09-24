@@ -88,9 +88,9 @@ io.on('connection', (socket) => {
     })
 
     socket.on('message sent', async data => {
-        const { room, message } = data
+        const { room,users_id, message } = data
         const db = app.get('db')
-        await db.create_message(room, message)
+        await db.create_message(room,users_id,message)
         let messages = await db.get_chat_messages(room )
         io.to(data.room).emit('message dispatched', messages)
     });

@@ -24,9 +24,11 @@ class Settings extends Component {
     render() {
         console.log(this.state)
         return (
+            <div className='set-body'>
             <div className="settings-box">
                 <input onChange={e => this.setState({profile_pic: e.target.value})} />
-                <button onClick={this.updateProfile}>Update Profile Pic</button>
+                <button className='set-btn' onClick={this.updateProfile}>Update Profile Pic</button>
+            </div>
             </div>
         )
     }

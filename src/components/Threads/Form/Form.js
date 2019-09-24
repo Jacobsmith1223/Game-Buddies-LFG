@@ -23,17 +23,17 @@ export default class Form extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='form-body'>
                 <div className='form-box'>
-                 <div>
-                     <p>Game Title</p>
+                 <div className='form-thing'>
+                     <p className='imageContent'>Game Title:</p>
                     <input onChange = {e => this.setState({game: e.target.value})} />
                  </div>
-                 <div>
-                    <p>Image URL:</p>
+                 <div className='form-thing'>
+                    <p className='imageContent'>Image URL:</p>
                     <input onChange = {e => this.setState({image: e.target.value})} />
                  </div>
-                 <button onClick={this.newThread}>Post</button>
+                 <button className='set-btn' onClick={this.newThread}>Post</button>
                 </div>
             </div>
         )

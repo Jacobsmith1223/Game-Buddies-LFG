@@ -34,7 +34,7 @@ import {Link} from 'react-router-dom'
                      </Link>)
         })
         return (
-            <div>
+            <div className='dash-body'>
                 <div className="dash-head">
                         <h1 className="dash-title">Game Buddies</h1>
                 </div>

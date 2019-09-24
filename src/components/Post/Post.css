@@ -1,23 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap');
+
 .delete {
     margin: 0 auto
 }
 
-
+.chatBody{
+    height:100vh;
+    width:100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .chatApp{
-    height: 70vh;
-    width:60vw;
-    background:gray;
+    height: 100vh;
+    width:100vw;
+    background:#F2F2F2;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    
 }
 
 .message{
-    height: 60vh;
-    width: 50vw;
+    height: 70vh;
+    width: 69vw;
     background:white;
+    display:flex;
+    flex-direction: column-reverse;
+    margin-bottom:30px;
+    border-radius:5px;
+    box-shadow: 10px 10px 13px -4px rgba(0,0,0,0.75);
+}
+
+.chat-input{
+    width: 44vw;
+    height:4vh;
+}
+
+.chat-btn{
+    width: 5vw;
+    height: 5vh;
+    background:white;
+    color:#572f80;
+    border:none;
+    outline:none;
+}
+.messages{
+    height:5vh;
+    width:20vw;
+    background:#6a5880;
+    color:white;
+    border:none;
+    outline:none;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:20px;
+    border-radius: 8px;
+    margin-left:10px;
+    box-sizing:border-box;
+    padding-left:20px;
+}
+.deleteGroup{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    font-size: 15px;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.chatRoom{
+    font-family: 'PT Sans Narrow', sans-serif;
 }
 
 
