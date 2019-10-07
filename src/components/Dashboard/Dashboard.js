@@ -10,7 +10,8 @@ import {Link} from 'react-router-dom'
 
          this.state={
              threads:[],
-             search:''
+             search:'',
+             menuOpen:false, 
          }
      }
      componentDidMount(){

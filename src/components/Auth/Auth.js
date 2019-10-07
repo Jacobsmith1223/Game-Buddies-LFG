@@ -18,6 +18,7 @@ import {addUser} from '../../redux/reducer'
              errorMessage:''
          }
      }
+     
 
      changeDisplay = () => {
          this.setState({
@@ -46,9 +47,10 @@ import {addUser} from '../../redux/reducer'
              this.props.history.push('/dashboard')
          })
          .catch((error) => {
+             console.log(error)
              this.setState({
                  error:true,
-                 errorMessage: error.response.data
+                //  errorMessage: error.response.data
              })
              setTimeout(() => {this.setState({
                  error:false,
@@ -79,80 +81,19 @@ import {addUser} from '../../redux/reducer'
              })},3000)
          })
      }
-
+     
+     
 
     render() {
-        console.log(this.state.password)
+        
+        console.log(this.props)
         return (
             <div className="auth-page">
-                {
-                    this.state.error ?
-                    (
-                        <div className="error">
-                            {this.state.errorMessage}
-                        </div>
-                    )
-                    :
-                    null
-                }
-                {
-                    this.state.display ?
-                    ( <div className={
-                        this.state.error ?
-                        "login-container shake"
-                        :
-                        "login-container"
-                    }>
-                        <h1 className="title">Game Buddies</h1>
-                        <img className="paddle" src="http://www.newdesignfile.com/postpic/2009/03/cartoon-game-controller-icon_156271.jpg"alt="controller" />
-                         <input name="username"
-                                type="text"
-                             placeholder="username"
-                             className="auth-input"
-                             value={this.state.username}
-                             onChange={this.handleChange}
-                                 />
-                         <input name="password"
-                                type="password"
-                             placeholder="password"
-                             className="auth-input"
-                             value={this.state.password}
-                             onChange={this.handleChange}
-                             />
-                         <div className="jeff">
-                             <button className="btn" onClick ={this.login}>Login</button>
-
-
-                             <button className="btn" onClick={this.changeDisplay}>Register</button>
-                         </div>
-                 </div>)
-                :
-                 (<div className="login-container">
-                        <h1 className="title">Sign Up.</h1>
-                        <img className="paddle" src="http://www.newdesignfile.com/postpic/2009/03/cartoon-game-controller-icon_156271.jpg" alt="controller"/>
-                         <input className="auth-input" 
-                                 type="text"
-                                 placeholder="username" 
-                                 name="username" 
-                                 value={this.state.username}
-                                 onChange={this.handleChange} />
-
-                        <input className="auth-input"  
-                                type="password"
-                                 placeholder="password" 
-                                 name="password" 
-                                value={this.state.password}
-                                onChange={this.handleChange} />
-
-                     <div className="jeff">
-                         <button onClick={this.register} className="btn" >Sign Up</button>
-                        <button onClick={this.changeDisplay} className="btn">Cancel</button>
-                        </div>
-                    </div>)
-                }
+                
+                
             </div>
         )
     }
 }
 
-export default connect(null,{addUser})(Auth)
+export default connect(null,{addUser})(Auth);

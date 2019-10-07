@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import {slideNav} from '../../redux/reducer'
 import './Nav.css'
 import {Link} from 'react-router-dom'
 
@@ -12,6 +13,10 @@ class Nav extends Component {
             console.log('you have logged out')
         })
     }
+    slideOut = () => {
+        const { slide } = this.props
+        this.props.slideNav(slide)
+    }
     componentDidUpdate(prevProps){
         if(this.props.profile_pic !== prevProps.profile_pic){
             this.fetchData(this.props.profile_pic)
@@ -19,27 +24,33 @@ class Nav extends Component {
     }
     render() {
         return (
+            <div>
+                <div className='hamburglar'>
+                    <img alt='hamburger'/>
+                </div>
             <div className="nav-bar">
+
                 <div className="profile-pic">
                     <img className="pic" alt ="profile pic"src={this.props.profile_pic}/>
                 </div>
                 <h1 className="user">{this.props.username}</h1>
                 <div className='middle-block' >
                  <Link to ='/new/thread'>
-                    <button className="new">New Thread</button>
+                    <button className="new">NEW THREAD</button>
                  </Link>
                  <Link to ="/dashboard" >
-                    <button className="home" >Home</button>
+                    <button className="home" >HOME</button>
                  </Link>
                  <Link to = '/settings'>
-                    <button className="setting">Settings</button>
+                    <button className="setting">SETTINGS</button>
                  </Link>
                 </div>
                 <div className="bottom-section">
                     <Link exact to='/'>
-                        <button className='block' onClick={this.logout}>Logout</button>
+                        <button className='block' onClick={this.logout}>LOGOUT</button>
                     </Link>
                 </div>
+            </div>
             </div>
         )
     }
@@ -48,8 +59,9 @@ class Nav extends Component {
 function mapStateToProps(state){
     return{
         username: state.username,
-        profile_pic: state.profile_pic
+        profile_pic: state.profile_pic,
+        slide: state.slide
     }
 }
 
-export default connect(mapStateToProps)(Nav)
+export default connect(mapStateToProps,{slideNav})(Nav)
