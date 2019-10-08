@@ -227,3 +227,7 @@ justify-content: space-between
     justify-content: flex-end;
     
 }
+.hamburglar{
+    position:fixed;
+    z-index: 9001;
+}

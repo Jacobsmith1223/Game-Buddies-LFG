@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {slideNav} from '../../redux/reducer'
+import burger from './Hamburgaler.svg'
 import './Nav.css'
 import {Link} from 'react-router-dom'
 
@@ -26,9 +27,9 @@ class Nav extends Component {
         return (
             <div>
                 <div className='hamburglar'>
-                    <img alt='hamburger'/>
+                <img src = {burger} alt='menu' onClick={this.slideOut} className="burger-menu"/>
                 </div>
-            <div className="nav-bar">
+            <div className={this.props.slide ? "no-slide" : "nav-bar"}>
 
                 <div className="profile-pic">
                     <img className="pic" alt ="profile pic"src={this.props.profile_pic}/>

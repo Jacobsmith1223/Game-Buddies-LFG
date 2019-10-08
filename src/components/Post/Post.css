@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
 
 .delete {
     margin: 0 auto
@@ -16,7 +17,7 @@
 .chatApp{
     height: 100vh;
     width:100vw;
-    background:#F2F2F2;
+    background-image: url(https://s3.us-east-2.amazonaws.com/umg-uploads/v3/layout/image26.jpg);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,7 +39,9 @@
 
 .chat-input{
     width: 44vw;
-    height:4vh;
+    height:4.5vh;
+    border-radius:3px;
+    border: 1px solid #9AADBF;
 }
 
 .chat-btn{
@@ -47,12 +50,13 @@
     background:white;
     color:#572f80;
     border:none;
+    border-radius:3px;
     outline:none;
 }
 .messages{
     height:5vh;
     width:20vw;
-    background:#6a5880;
+    background:#603e90;
     color:white;
     border:none;
     outline:none;
@@ -71,11 +75,11 @@
     flex-direction: row;
     align-items:center;
     font-size: 15px;
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .chatRoom{
-    font-family: 'PT Sans Narrow', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 
