@@ -5,8 +5,8 @@ const initialState = {
     slide: false
 };
 
-const ADD_USER = 'ADD_USER'
 const SLIDE_NAV = 'SLIDE_NAV'
+const ADD_USER = 'ADD_USER'
 
 export function addUser(id,username,profile_pic){
     return{
@@ -16,6 +16,13 @@ export function addUser(id,username,profile_pic){
 }
 
 export function slideNav(slide){
+    return{
+        type: SLIDE_NAV,
+        payload: {slide}
+    }
+}
+
+export function slideNavAuth(slide){
     return{
         type: SLIDE_NAV,
         payload: {slide}
