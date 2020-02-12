@@ -30,7 +30,7 @@ class Nav extends Component {
                 <img src = {burger} alt='menu' onClick={this.slideOut} className="burger-menu"/>
                 </div>
             <div className={this.props.slide ? "no-slide" : "nav-bar"}>
-
+                
                 <div className="profile-pic">
                     <img className="pic" alt ="profile pic"src={this.props.profile_pic}/>
                 </div>

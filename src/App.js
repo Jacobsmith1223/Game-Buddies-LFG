@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
-import Nav from './components/Nav/Nav'
-import router from './utilities/router'
-import PropTypes from 'prop-types'
-import {withRouter} from 'react-router-dom'
-import 'reset-css'
+import React, { Component } from "react";
+import Nav from "./components/Nav/Nav";
+import router from "./utilities/router";
+import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
+import "reset-css";
 
- class App extends Component {
+class App extends Component {
   static propTypes = {
     match: PropTypes.object.isRequired,
     location: PropTypes.object.isRequired,
@@ -13,20 +13,14 @@ import 'reset-css'
   };
 
   render() {
-    console.log(this.props)
+    console.log(this.props);
     return (
       <div>
-        { this.props.location.pathname === '/' ?
-        null
-        :
-        <Nav />
-        }
-      
-      <div>
-        {router}
+        {this.props.location.pathname === "/" ? null : <Nav />}
+
+        <div>{router}</div>
       </div>
-      </div>
-    )
+    );
   }
 }
-export default withRouter(App)
+export default withRouter(App);
