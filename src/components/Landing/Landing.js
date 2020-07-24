@@ -131,8 +131,13 @@ class Landing extends Component {
                 className="auth-btn"
                 onClick={this.showModal}
               >
-                Login
+                Sign in
               </button>
+              
+              <button className="register-btn" onClick={this.showRegister}>
+                Get Started
+              </button>
+            
             </div>
           </div>
           <div className={this.state.show ? "display-auth" : "dont-display"}>
@@ -233,13 +238,6 @@ class Landing extends Component {
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div className="middle">
-              <p className="middle-p">Sign up to begin</p>
-              <button className="register-btn" onClick={this.showRegister}>
-                Register
-              </button>
             </div>
           </div>
         </div>

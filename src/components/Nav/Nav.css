@@ -3,7 +3,7 @@
 .nav-bar{
     height:100vh;
     width: 16vw;
-    background-image:linear-gradient(to bottom, rgba(126, 49, 109, 0.6)0%, rgb(146,59,127,.7)100%), url(https://s3.us-east-2.amazonaws.com/umg-uploads/v3/layout/image25.jpg);
+    background-image:linear-gradient(to bottom, #ED696A,#ED696A), url(https://s3.us-east-2.amazonaws.com/umg-uploads/v3/layout/image25.jpg);
     background-size:cover;
     background-position:center center;
     position:fixed;

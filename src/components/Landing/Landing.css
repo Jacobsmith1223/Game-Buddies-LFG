@@ -33,12 +33,11 @@
 }
 
 .auth-btn{
-        width: 100%;
+        width: 50%;
         height: 100%;
         background:transparent;
         color:white;
-        border-radius: 5px;
-        border: 1px solid;
+        border:none;
         outline:none;
         font-size:17px;
         font-family: 'Open Sans', sans-serif;
@@ -84,16 +83,16 @@
 }
 
 .register-btn{
-    width: 15%;
-    height: 8vh;
-    background:#ED696A;
-    color:white;
+    width: 50%;
+    height: 6vh;
+    background:white;
+    color:#616163;
     border-radius: 5px;
     border-color:#616163;
-    font-size:17px;
+    font-size:15px;
     font-family: 'Open Sans', sans-serif;
     font-weight:normal;
-    margin-top:20px;
+    
 }
 
 .main-tag{
