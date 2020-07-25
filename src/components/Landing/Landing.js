@@ -162,8 +162,8 @@ class Landing extends Component {
                 onChange={this.handleChange}
               />
               <div className="jeff">
-                <button className="btn" onClick={this.login}>
-                  Login
+                <button className="btn" onClick={this.login}> 
+                   <p>Continue</p><Icon.ArrowRight/>
                 </button>
               </div>
             </div>
